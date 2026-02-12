@@ -1,0 +1,5 @@
+{
+  "name": "Interviewer Recruitment Portal",
+  "description": "A step-by-step recruitment landing page for interviewers with quiz logic, video validation, and Excel integration capability.",
+  "requestFramePermissions": []
+}
