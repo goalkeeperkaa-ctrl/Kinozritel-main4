@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ApplicationData } from './types';
 import { APP_CONFIG } from './constants';
 import { ProgressBar } from './components/ProgressBar';
@@ -14,6 +14,8 @@ const INITIAL_DATA: ApplicationData = {
   timestamp: '',
   utm_source: '',
   utm_campaign: '',
+  utm_content: '',
+  utm_term: '',
   step1_confirm_schedule: false,
   step1_confirm_methodology: false,
   step1_confirm_audiocontrol: false,
@@ -45,7 +47,9 @@ function App() {
       ...prev,
       timestamp: new Date().toISOString(),
       utm_source: params.get('utm_source') || '',
-      utm_campaign: params.get('utm_campaign') || ''
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || '',
+      utm_term: params.get('utm_term') || ''
     }));
   }, []);
 

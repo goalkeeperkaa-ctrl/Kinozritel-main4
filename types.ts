@@ -12,6 +12,8 @@ export interface ApplicationData {
   timestamp: string;
   utm_source: string;
   utm_campaign: string;
+  utm_content: string;
+  utm_term: string;
   
   // Step 1: Methodology & Rules (New specific gates)
   step1_confirm_schedule: boolean;    // "Я понял(а) график..."
@@ -36,7 +38,18 @@ export interface ApplicationData {
   consentContact: boolean;
   
   // Calculated
-  status: 'New' | 'Rejected (Age)' | 'Rejected (Criteria)' | 'Needs Review';
+  status:
+    | 'New'
+    | 'In review'
+    | 'Contacted'
+    | 'No answer'
+    | 'Interview scheduled'
+    | 'Interview passed'
+    | 'Training'
+    | 'Exam scheduled'
+    | 'Approved'
+    | 'Rejected'
+    | 'Reserve';
 }
 
 export interface StepProps {

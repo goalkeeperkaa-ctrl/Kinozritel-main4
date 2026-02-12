@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import AdminApp from './admin/AdminApp';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -8,8 +9,11 @@ if (!rootElement) {
 }
 
 const root = ReactDOM.createRoot(rootElement);
+const pathname = window.location.pathname.toLowerCase();
+const isAdminRoute = pathname === '/admin' || pathname.startsWith('/admin/');
+
 root.render(
   <React.StrictMode>
-    <App />
+    {isAdminRoute ? <AdminApp /> : <App />}
   </React.StrictMode>
 );
