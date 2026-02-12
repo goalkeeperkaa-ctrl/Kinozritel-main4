@@ -1,4 +1,4 @@
-import { QuizQuestion } from './types';
+﻿import { QuizQuestion } from './types';
 
 export const APP_CONFIG = {
   roleName: "Проект «Я-Кинозритель»",
